@@ -1,6 +1,13 @@
 import java.util.List;
 
 public class Triangulo extends Poligono {
+    String result = null;
+    Point a = pontos.get(0);
+    Point b = pontos.get(1);
+    Point c = pontos.get(2);
+    double d1 = a.distance(b);
+    double d2 = a.distance(c);
+    double d3 = b.distance(c);
 
     public Triangulo(List<Point> pontos) throws InvalidPoligonException {
         super(pontos);
@@ -9,13 +16,7 @@ public class Triangulo extends Poligono {
     }
 
     public String getTriangleType(){
-        String result = null;
-        Point a = pontos.get(0);
-        Point b = pontos.get(1);
-        Point c = pontos.get(2);
-        double d1 = a.distance(b);
-        double d2 = a.distance(c);
-        double d3 = b.distance(c);
+
         boolean hip = false;
         if(d1 == d2 && d2 == d3){
             result = "Equilatero";
@@ -40,6 +41,10 @@ public class Triangulo extends Poligono {
             }
         }
         return result;
+    }
+
+    public double getTrianglePerimeter(){
+        return (d1+d2+d3);
     }
 }
 

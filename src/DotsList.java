@@ -50,18 +50,23 @@ public class DotsList {
     public void processarLista(List<Point> pontos){
         try{
             int maxPoints = 0;
+            double perimeter = 0;
 
             maxPoints = pontos.size();
             if( maxPoints == 3){
                 Triangulo pol = new Triangulo(pontos);
                 String tipo = pol.getTriangleType();
                 System.out.println("O triangulo foi do tipo " + tipo);
+                perimeter = pol.getTrianglePerimeter();
+                System.out.println("Perimetro: " + perimeter);
             }
             else
             if (maxPoints == 4) {
                 Quadrilatero pol = new Quadrilatero(pontos);
                 String tipo = pol.getQuadrilateroType();
                 System.out.println("O quadrilatero foi do tipo " + tipo);
+                perimeter = pol.getQuadrilateralPerimeter();
+                System.out.println("Perimetro: " + perimeter);
             }
             else {
                 Poligono pol = new Poligono(pontos);
