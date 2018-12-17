@@ -5,6 +5,6 @@ class main{
 
         DotsList lista = new DotsList();
         List<Point> pontos = lista.setLista("ficheiro.txt");
-        lista.processarLista(pontos);
+        lista.processarLista(pontos); 
     }
 }
